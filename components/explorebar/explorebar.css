@@ -98,12 +98,16 @@
     left: 0;
     height: 35px;
     width: 35px;
-    background-color: #107b64;
-    z-index: 100;
+    background-color: #7b1022;
+    z-index: 1000;
 }
 
-.btn1 {
-    left: 80%;
+.btn2 button {
+    left: 91%;
+}
+
+.btn1 button {
+    left: 7%;
 }
 
 .btn1 svg,
@@ -112,6 +116,10 @@
 }
 
 @media (max-width: 650px) {
+
+    .container {
+        padding: 0;
+    }
 
     .overlay,
     .hodlder {
@@ -128,6 +136,15 @@
     }
 
     .overlay::after {
+        display: none;
+    }
+
+
+    .btn2 button {
+        display: none;
+    }
+
+    .btn1 button {
         display: none;
     }
 

@@ -17,6 +17,15 @@ export default function Explorebar() {
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
+                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                 </div>
             </div>
             <div className={"btn2"}>

@@ -1,13 +1,31 @@
 'use client'
 import Excard from "./excard";
 import "./explorebar.css"
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { BuildingLibraryIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 export default function Explorebar() {
-
+    const [isOverflowing, setIsOverflowing] = useState(false);
     const [isScrolled, setIsScrolled] = useState(0);
     const scrollContainerRef = useRef(null);
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            const container = scrollContainerRef.current;
+            if (container) {
+                const containerWidth = container.clientWidth;
+                const contentWidth = container.scrollWidth;
+                setIsOverflowing(contentWidth > containerWidth);
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
 
     const scrollHandler = (event) => {
@@ -35,30 +53,20 @@ export default function Explorebar() {
 
     return (
         <div className={"container"}>
-            <div className={`btn1 ${isScrolled ? 'scrolled' : ''}`}>
+            <div className={`btn1 ${isScrolled ? 'scrolled' : ''} ${!isOverflowing ? 'disable' : ''}`}>
                 <button onClick={scrollLeft} ><ChevronLeftIcon /></button>
             </div>
-            <div className={`overlay ${isScrolled ? 'scrolled' : ''}`}>
+            <div className={`overlay ${isScrolled ? 'scrolled' : ''}  ${!isOverflowing ? "disable" : ""} `}>
                 <div
-                    className={"hodlder"} onScroll={scrollHandler} ref={scrollContainerRef}>
+                    className={`hodlder  ${!isOverflowing ? "disable" : ""} `} onScroll={scrollHandler} ref={scrollContainerRef}>
                     <Excard href={"/"} title={"Universities"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                     <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
                 </div>
             </div>
-            <div className={"btn2"}>
+            <div className={`btn2 ${!isOverflowing ? 'disable' : ''}`}>
                 <button onClick={scrollRight}><ChevronRightIcon /></button>
             </div>
         </div>

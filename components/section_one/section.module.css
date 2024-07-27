@@ -1,0 +1,113 @@
+/* section.module.css */
+
+.container {
+    position: relative;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+    height: 690px;
+    min-height: 690px;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.insideConen,
+.insideConar {
+    padding: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%),
+        linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 80%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.insideConen {
+    text-align: left;
+    direction: ltr;
+    font-family: "Poppins", sans-serif;
+}
+
+.insideConar {
+    direction: rtl;
+    font-family: "Cairo", sans-serif;
+}
+
+
+.textSec {
+    margin-bottom: 20px;
+}
+
+.textSec h2 {
+    text-transform: capitalize;
+    font-size: 45px;
+    max-width: 450px;
+    font-weight: 600;
+}
+
+.textSec p {
+    font-size: 20px;
+    max-width: 520px;
+}
+
+
+
+.btn a {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px;
+    background-color: #610c1a;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn a:hover {
+    background-color: rgb(223, 137, 122);
+    color: rgb(116, 25, 25);
+}
+
+@media (max-width: 650px) {
+
+    .textSec h2 {
+        font-size: 28px;
+    }
+
+    .textSec p {
+        font-size: 16px;
+        max-width: 520px;
+    }
+
+
+
+    .btn a {
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100px;
+        padding: 5px;
+        background-color: #610c1a;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+}

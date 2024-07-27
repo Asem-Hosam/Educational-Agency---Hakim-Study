@@ -1,0 +1,89 @@
+.swipper {
+    width: 100%;
+    height: 406px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    overflow-x: scroll;
+    margin: auto;
+    white-space: nowrap;
+}
+
+.swipper>div {
+    margin: 15px;
+}
+
+.swipper::-webkit-scrollbar {
+    width: 0;
+}
+
+.texCon {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 10px 20px 5px;
+    z-index: 1;
+    justify-content: left;
+    align-items: center;
+    max-width: 240px;
+    text-wrap: stable;
+    line-height: 1.2;
+}
+
+.texCon h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.texCon p {
+    font-size: 17px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.swiperSlide {
+    max-width: 240px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    width: 240px;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #7b1022;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.swiperSlide .image {
+    max-width: 240px;
+    min-width: 240px;
+    height: auto;
+}
+
+@media (max-width: 650px) {
+    .swipper {
+        width: 100%;
+        height: 370px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: left;
+        padding: 10px;
+        overflow-x: scroll;
+        padding: 0;
+    }
+
+    .swipper>div {
+        margin-right: 20px;
+        margin-left: 0px;
+    }
+}

@@ -1,0 +1,178 @@
+.containeren {
+    color: white;
+    width: 100%;
+    bottom: 100;
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    direction: ltr;
+    z-index: 100;
+}
+
+
+
+.containerar {
+    color: white;
+    width: 100%;
+    bottom: 100;
+    position: absolute;
+    direction: rtl;
+    font-family: "Cairo", sans-serif;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    z-index: 100;
+
+}
+
+
+
+
+.logo {
+    font-size: 25px;
+}
+
+.image {
+    margin-top: 10px;
+    width: 90px;
+    height: auto;
+}
+
+.hlinks {
+    display: flex;
+}
+
+.hlinks a {
+    margin: 15px;
+}
+
+
+.localCon img {
+    width: 30px;
+    height: 30px;
+    color: antiquewhite;
+}
+
+.opContainer {
+    display: flex;
+    align-items: center;
+}
+
+
+.opContainer>div {
+    margin: 10px;
+
+}
+
+
+.langIcon {
+    align-items: center;
+    color: white;
+}
+
+.wrapperChange {
+    position: relative;
+    border-radius: 5px;
+    width: 100px;
+    background-color: #610c1ac4;
+    justify-content: space-between;
+    display: flex;
+    padding: 4px 8px;
+}
+
+.wrapperChange p {
+    text-transform: uppercase;
+}
+
+
+.iconChange {
+    width: 25px;
+}
+
+
+.controllers {
+    position: absolute;
+    top: 55px;
+    display: none;
+}
+
+.langIcon:hover>.controllers {
+    display: flex;
+}
+
+.localCon {
+    display: flex;
+}
+
+
+.authIcon {
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 25px;
+    height: 25px;
+}
+
+
+
+@media (max-width: 650px) {
+    .containeren {
+        padding: 10px 15px;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        direction: ltr;
+    }
+
+
+
+    .containerar {
+        padding: 10px 15px;
+        direction: rtl;
+        font-family: "Cairo", sans-serif;
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .logo img {
+        margin-top: 20px;
+    }
+
+    .authIcon {
+        display: none;
+    }
+
+    .hlinks {
+        z-index: 3;
+        background-color: #7b1022;
+        height: 100vh;
+        width: 100%;
+        display: none;
+        position: absolute;
+    }
+
+    .hlinks a {
+        display: block;
+        background-color: #7b1022;
+        margin: 15px;
+    }
+
+    .opContainer {
+        display: block;
+        align-items: center;
+    }
+
+
+}

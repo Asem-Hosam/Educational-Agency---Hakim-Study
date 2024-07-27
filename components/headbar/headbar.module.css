@@ -1,0 +1,10 @@
+.container {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    color: white;
+    background-color: #610c1a;
+    height: 30px;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}

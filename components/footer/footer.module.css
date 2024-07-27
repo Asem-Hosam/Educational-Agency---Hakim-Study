@@ -1,0 +1,145 @@
+.contaier {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.contaier {
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+.ulinks {
+    display: block;
+}
+
+
+
+.ulinks a {
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: rgba(128, 128, 128, 0.733);
+    display: flex;
+}
+
+.icon {
+    color: black;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.identity p {
+    color: rgb(128, 128, 128);
+    font-size: 16px;
+    max-width: 350px;
+    text-wrap: pretty;
+}
+
+.upperCon {
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact {
+    display: block;
+}
+
+.contact span {
+    color: rgb(128, 128, 128);
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.upperCon h4 {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.buttomCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    border: 1.2px solid rgba(211, 209, 209, 0.692);
+}
+
+.buttomCon h5 {
+    color: rgb(128, 128, 128);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.shapes {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.parent {
+    position: relative;
+}
+
+.shape1,
+.shape2 {
+    position: absolute;
+    border-radius: 120%;
+    width: 20vw;
+    height: 20vw;
+    max-width: 250px;
+    max-height: 250px;
+    filter: blur(35px);
+    opacity: 20%;
+}
+
+
+.shape1 {
+    top: 80%;
+    left: -10%;
+    background-color: #a70d27;
+    opacity: 40%;
+}
+
+.shape2 {
+    top: 0%;
+    left: 95%;
+    background-color: #a70d27;
+    opacity: 30%;
+}
+
+@media (max-width: 650px) {
+    .contaier>div {
+        display: block;
+        justify-content: space-between;
+    }
+
+    .upperCon>div {
+        margin-bottom: 50px;
+    }
+
+    .buttomCon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        height: 45px;
+        border: 1.2px solid rgba(211, 209, 209, 0.692);
+    }
+
+
+}

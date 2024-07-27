@@ -1,0 +1,18 @@
+{
+    "Header": {
+        "Home": "Home",
+        "Universities": "Universities",
+        "AboutUs": "AboutUs",
+        "Services": "Services"
+    },
+    "ProfilePage": {
+        "title": "Hello world!",
+        "dynamicText": "Hello , {name}",
+        "mylink": "you can visit my fb <link>click here</link> here"
+    },
+    "SectionOne": {
+        "title": "Educational Consultant",
+        "desc": "Your educational advisor in Türkiye and your companion.",
+        "Btn": "Explore"
+    }
+}

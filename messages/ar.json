@@ -1,0 +1,19 @@
+{
+    "Header": {
+        "Home": "الصفحة الرئيسية",
+        "Universities": "الجامعات",
+        "AboutUs": "نحن",
+        "Services": "خدماتنا",
+        "joinBtn": "خدماتنا"
+    },
+    "ProfilePage": {
+        "title": "Hello world!",
+        "dynamicText": "مرحبا , {name}",
+        "mylink": "يمكنك زياره صفحه الفيسبوك الخاصه بي: fb <link> click here </link> here:"
+    },
+    "SectionOne": {
+        "title": "مستشار تعليمي",
+        "desc": "مستشارك التعليمي في تركيا ورفيقك في مسيرتك التعليمية",
+        "Btn": "استكشف"
+    }
+}

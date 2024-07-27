@@ -1,0 +1,36 @@
+.container {
+    padding: 50px 20px 20px 20px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swipper {
+    width: 100%;
+}
+
+.textCon {
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.textCon h2 {
+    font-weight: 500;
+}
+
+.textCon span {
+    font-weight: 700;
+}
+
+
+@media (max-width: 650px) {
+    .textCon {
+        display: block;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+    }
+}

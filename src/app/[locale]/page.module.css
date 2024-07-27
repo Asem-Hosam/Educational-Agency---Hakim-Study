@@ -1,0 +1,84 @@
+.shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape1,
+.shape2,
+.shape3 {
+    position: absolute;
+    border-radius: 100%;
+    width: 20vw;
+    height: 20vw;
+    max-width: 250px;
+    max-height: 250px;
+    filter: blur(35px);
+    opacity: 20%;
+}
+
+
+.shape1 {
+    top: 20%;
+    left: -10%;
+    background-color: #a70d27;
+    opacity: 40%;
+}
+
+.shape2 {
+    top: -20%;
+    right: -10%;
+    background-color: #a70d27;
+}
+
+.shape3 {
+    top: 70%;
+    left: 90%;
+    background-color: #a70d27;
+}
+
+.shape4 {
+    top: 70%;
+    left: 90%;
+    background-color: #a70d27;
+}
+
+
+@media (max-width: 650px) {
+
+
+    .shape1,
+    .shape2,
+    .shape3 {
+        position: absolute;
+        border-radius: 100%;
+        width: 40vw;
+        height: 40vw;
+        max-width: 250px;
+        max-height: 250px;
+        filter: blur(25px);
+        opacity: 30%;
+    }
+
+    .shape1 {
+        top: 20vh;
+        left: 10vh;
+        background-color: #ff627c;
+    }
+
+    .shape2 {
+        top: -20%;
+        right: -20%;
+        background-color: #ff3154;
+    }
+
+    .shape3 {
+        top: 70%;
+        left: 90%;
+        background-color: #d34c62;
+    }
+
+
+}

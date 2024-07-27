@@ -1,0 +1,24 @@
+.btnCon {
+    transition: 2s ease-in;
+    display: block;
+    width: 100px;
+    border-radius: 5px;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    background-color: #610c1ac4;
+}
+
+
+
+.btnCon button {
+    color: white;
+    text-transform: uppercase;
+    background-color: #7b10224b;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: 2px auto;
+    width: 100%;
+    height: 30px;
+}

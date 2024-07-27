@@ -1,0 +1,135 @@
+.container {
+    border: 1.2px solid rgba(211, 209, 209, 0.692);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    position: relative;
+}
+
+
+.hodlder {
+    width: 90%;
+    padding: 10px;
+    height: 80px;
+    overflow: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.overlay,
+.hodlder {
+    margin: auto;
+    position: relative;
+    width: 90%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay::before {
+    position: absolute;
+    content: "";
+    left: 4.8%;
+    top: 0;
+    z-index: 100;
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0) 90%);
+}
+
+.overlay::after {
+    position: absolute;
+    content: "";
+    right: 4.8%;
+    top: 0;
+    z-index: 100;
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(-90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0) 90%);
+}
+
+.overlay::-webkit-scrollbar,
+.hodlder::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+.container {
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+}
+
+.container svg {
+    width: 25px;
+    height: 25px;
+}
+
+.hodlder p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hodlder>a {
+    margin: 5px 20px;
+}
+
+.exCard {
+    cursor: pointer;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn1 button,
+.btn2 button {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background-color: #107b64;
+    z-index: 100;
+}
+
+.btn1 {
+    left: 80%;
+}
+
+.btn1 svg,
+.btn2 svg {
+    width: 18px;
+}
+
+@media (max-width: 650px) {
+
+    .overlay,
+    .hodlder {
+        margin: auto;
+        position: relative;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: left;
+    }
+
+    .overlay::before {
+        display: none;
+    }
+
+    .overlay::after {
+        display: none;
+    }
+
+
+}

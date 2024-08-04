@@ -1,22 +1,25 @@
 .container {
-    border: 1.2px solid rgba(211, 209, 209, 0.692);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0px 20px;
+    background-color: white;
+    z-index: 50;
+    width: 100%;
     position: relative;
-    font-family: "Poppins", sans-serif;
     line-height: 1;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 2px 0px;
 }
 
 .hodlder {
     width: 90%;
-    padding: 10px;
+    padding: 10px 0px 10px 0px;
     height: 80px;
-    overflow: scroll;
+    overflow: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
 }
+
+
 
 .overlay,
 .hodlder {
@@ -25,7 +28,7 @@
     width: 90%;
     align-items: center;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
 }
 
 .overlay.disable,
@@ -34,50 +37,19 @@
 }
 
 .overlay::before {
-    opacity: 0;
+    opacity: 100;
     position: absolute;
     content: "";
     left: 4.8%;
     top: 0;
     z-index: 100;
     height: 100%;
-    width: 15%;
+    width: 8%;
     background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0) 90%);
     transition: opacity 0.4s ease-in-out;
 }
 
-.overlay.scrolled::before {
-    opacity: 1;
-}
 
-.overlay.disable .btn1 button {
-    display: none;
-}
-
-.btn2.disable button {
-    display: none;
-}
-
-
-.btn1.scrolled button {
-    animation: slideInFromRight 0.5s forwards;
-}
-
-@keyframes slideInFromRight {
-    from {
-        transform: translate(100%, -50%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-    }
-}
-
-.overlay.disable .btn2 {
-    display: none;
-}
 
 .overlay::after {
     position: absolute;
@@ -86,7 +58,7 @@
     top: 0;
     z-index: 100;
     height: 100%;
-    width: 15%;
+    width: 10%;
     background: linear-gradient(-90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0) 90%);
 }
 
@@ -116,6 +88,39 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(106, 106, 106);
+    position: relative;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+
+
+
+.exCard::after {
+    color: rgb(106, 106, 106);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.active::after {
+    width: 100%;
+    background-color: #e00d0d;
+    border-bottom: none;
+}
+
+
+
+
+.exCard.active {
+    color: black;
 }
 
 .btn1 button,
@@ -137,14 +142,17 @@
     transition: opacity 0.4s ease-in-out;
 }
 
-.btn2 button {
-    left: 91%;
+
+.overlay.disable .btn2 {
+    display: none;
 }
 
-.btn1 button {
-    opacity: 0;
-    left: 7%;
+
+.overlay.disable .btn1 {
+    display: none;
 }
+
+
 
 .btn1 svg,
 .btn2 svg {
@@ -169,5 +177,9 @@
     .btn2 button,
     .btn1 button {
         display: none;
+    }
+
+    .hodlder>a {
+        margin: 5px 10px;
     }
 }

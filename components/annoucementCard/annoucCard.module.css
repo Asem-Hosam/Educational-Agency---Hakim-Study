@@ -1,0 +1,171 @@
+.cardContainer {
+    border-radius: 4px;
+    max-width: 350px;
+}
+
+
+
+
+.title h6 {
+    line-height: 1;
+    text-wrap: balance;
+    max-lines: 2;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.img {
+    overflow: hidden;
+    max-width: 350px;
+    width: 100%;
+    background-color: rgb(165, 165, 165);
+    border-radius: 12px;
+    aspect-ratio: 1 /1;
+}
+
+
+.ImageContent {
+    width: auto;
+    height: auto;
+    object-position: center;
+}
+
+.Image {
+    object-position: center;
+    object-fit: cover;
+    height: auto;
+}
+
+.date p {
+    color: #7B7B7A;
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
+.title {
+    text-wrap: pretty;
+}
+
+.desc p {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #898888;
+    max-height: 100%;
+    margin: 8px 0px;
+}
+
+
+.author {
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.author p {
+    color: #4b4b4b;
+    margin: 0px 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.author h6 {
+    font-weight: 500;
+    color: #4b4b4b;
+    font-size: 12px;
+    margin: 0px 5px 0px 0px;
+}
+
+.authorImage {
+    overflow: hidden;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 650px) {
+    .cardContainer {
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+
+
+
+    .title h6 {
+        line-height: 1;
+        text-wrap: balance;
+        max-lines: 2;
+        font-size: 19px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    .img {
+        width: 100%;
+        background-color: rgb(165, 165, 165);
+        border-radius: 12px;
+        /* aspect-ratio: 1 /1; */
+    }
+
+
+    .Image {
+        object-position: center;
+        object-fit: cover;
+        height: auto;
+    }
+
+    .date p {
+        color: #7B7B7A;
+        font-size: 11px;
+        margin: 5px 0px;
+    }
+
+    .title {
+        text-wrap: pretty;
+    }
+
+
+    .desc {
+        max-width: 380px;
+        line-break: strict;
+    }
+
+    .desc p {
+        line-break: strict;
+        font-size: 12px;
+        line-height: 1.2;
+        color: #898888;
+        margin: 8px 0px;
+    }
+
+
+    .author {
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+
+    .author p {
+        color: #4b4b4b;
+        margin: 0px 6px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .author h6 {
+        font-weight: 500;
+        color: #4b4b4b;
+        font-size: 12px;
+        margin: 0px 5px 0px 0px;
+    }
+
+    .authorImage {
+        overflow: hidden;
+        border-radius: 100%;
+        width: 18px;
+        height: 18px;
+    }
+
+}

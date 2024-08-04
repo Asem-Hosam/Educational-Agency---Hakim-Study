@@ -1,20 +1,21 @@
+"use client"
 import styles from "./header.module.css"
 import logo from "@/../assets/logo.png"
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from "next-intl";
 import LocaleSwitcher from "../localswitcher/localSwitcher";
 import { UserCircleIcon, LanguageIcon } from '@heroicons/react/24/outline'
 import CustomImage from './../customImage';
 import CustomLink from './../customLink';
+import { useEffect, useState } from 'react';
 
 
 
 
 
-async function Header({ params: locale }) {
-    const t = await getTranslations('Header');
+function Header({ params: locale }) {
 
-
-
+    const t = useTranslations('Header');
+    const [scrollPosition, setScrollPosition] = useState(0);
     const currentLocale = locale;
 
     const links = [
@@ -25,8 +26,24 @@ async function Header({ params: locale }) {
     ];
 
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const containerStyle = {
+        top: scrollPosition > 50 ? '10px' : '50px',
+    };
+
     return (
-        <div className={locale == "ar" ? styles.containerar : styles.containeren}>
+        <div className={styles.container} style={containerStyle}>
             <div className={styles.logo}>
                 <CustomImage src={logo.src} width={500} height={500} className={styles.image} alt={"logo"} />
             </div>
@@ -38,21 +55,13 @@ async function Header({ params: locale }) {
                 ))}
             </div>
             <div className={styles.opContainer}>
-                <div className={styles.langIcon}>
-                    <div className={styles.wrapperChange}>
-                        <LanguageIcon className={styles.iconChange} />
-                        <p>{currentLocale}</p>
-                    </div>
-                    <div className={styles.controllers}>
-                        <LocaleSwitcher />
-                    </div>
-                </div>
+                <LocaleSwitcher />
                 <div className={styles.btnCon}>
                     <UserCircleIcon className={styles.authIcon} />
                 </div>
             </div>
-        </div >
-    )
+        </div>
+    );
 }
 
 export default Header;;

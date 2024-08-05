@@ -160,6 +160,11 @@
 }
 
 @media (max-width: 650px) {
+
+    .exCard p {
+        font-size: 12px;
+    }
+
     .container {
         padding: 0;
     }

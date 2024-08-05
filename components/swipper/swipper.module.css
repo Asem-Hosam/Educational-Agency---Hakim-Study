@@ -3,9 +3,9 @@
     height: 406px;
     margin-top: 30px;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     padding: 10px;
-    overflow-x: scroll;
+    overflow-x: auto;
     margin: auto;
     white-space: nowrap;
 }
@@ -27,7 +27,7 @@
     color: white;
     padding: 10px 20px 5px;
     z-index: 1;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     max-width: 240px;
     text-wrap: stable;
@@ -76,7 +76,7 @@
         height: 370px;
         margin-top: 20px;
         display: flex;
-        justify-content: left;
+        justify-content: flex-start;
         padding: 10px;
         overflow-x: scroll;
         padding: 0;

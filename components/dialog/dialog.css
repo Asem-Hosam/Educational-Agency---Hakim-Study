@@ -1,0 +1,68 @@
+.dialog-sheet {
+    margin: auto;
+    padding: 20px;
+    max-width: 500px;
+    min-width: 450px;
+    background: white;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    line-height: 1.2;
+}
+
+.dialog-sheet h2 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.dialog-sheet p {
+    font-size: 16px;
+    color: gray;
+}
+
+.dialog-sheet.show {
+    animation: openAnimation 0.3s forwards;
+}
+
+.dialog-sheet:not(.show) {
+    animation: closeAnimation 0.3s forwards;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes openAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes closeAnimation {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .dialog-sheet {
+        min-width: 0px;
+        width: 90%;
+    }
+}

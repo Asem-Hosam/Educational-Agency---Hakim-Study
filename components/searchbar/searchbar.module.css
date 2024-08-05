@@ -1,0 +1,136 @@
+.container {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    position: relative;
+}
+
+.container>div {
+    margin: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 20px;
+}
+
+
+.searchIcon {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    aspect-ratio: 1/1;
+    background-color: #ffffff;
+}
+
+.icon {
+    width: 25px;
+    color: black;
+}
+
+.bg {
+    cursor: pointer;
+    padding: 0px 5px;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: flex-start;
+    height: 45px;
+    border-radius: 100px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.Usericon {
+    width: 25px;
+    color: black;
+}
+
+.Sicon {
+    width: 25px;
+}
+
+.image {
+    width: 31px;
+    height: auto;
+}
+
+.searchbar p {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    outline: none;
+    padding: 0px 5px;
+}
+
+
+
+
+.uselog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+}
+
+.uselog>div {
+    margin: 0px 20px;
+}
+
+
+@media (max-width: 650px) {
+
+    .image {
+        width: 29px;
+        height: auto;
+    }
+
+    .Usericon {
+        display: none;
+    }
+
+    .bg {
+        cursor: pointer;
+        padding: 0px 5px;
+        background-color: #eeeeee;
+        display: flex;
+        align-items: center;
+        width: 90%;
+        justify-content: flex-start;
+        height: 45px;
+        border-radius: 100px;
+    }
+
+    .Sicon {
+        width: 18px;
+    }
+
+    .searchIcon {
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        aspect-ratio: 1/1;
+        background-color: #ffffff;
+    }
+
+
+}

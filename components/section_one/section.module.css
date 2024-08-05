@@ -19,7 +19,7 @@
 
 .insideConen,
 .insideConar {
-    padding: 25px;
+    padding: 0px 80px;
     position: absolute;
     top: 0;
     left: 0;
@@ -35,16 +35,6 @@
     z-index: 1;
 }
 
-.insideConen {
-    text-align: left;
-    direction: ltr;
-    font-family: "Poppins", sans-serif;
-}
-
-.insideConar {
-    direction: rtl;
-    font-family: "Cairo", sans-serif;
-}
 
 
 .textSec {
@@ -85,9 +75,22 @@
 }
 
 @media (max-width: 650px) {
+    .image {
+        width: 100%;
+        height: 450px;
+        min-height: 690px;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+    }
 
     .textSec h2 {
         font-size: 28px;
+    }
+
+    .insideConar,
+    .insideConen {
+        padding: 25px;
     }
 
     .textSec p {

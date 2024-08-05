@@ -37,12 +37,13 @@
     }
 
     .bottomNavabarContainer p {
+        font-size: 13px;
         display: none;
-        color: rgb(94, 93, 93);
+        color: rgb(106, 106, 106);
     }
 
     .icon {
-        color: rgb(94, 93, 93);
+        color: rgb(106, 106, 106);
         width: 20px;
     }
 

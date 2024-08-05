@@ -8,24 +8,45 @@ import { usePathname } from 'next/navigation';
 function BottomNavbar() {
     const path = usePathname();
     const [isHidden, setIsHidden] = useState(false);
+    const [hideTimeout, setHideTimeout] = useState(null);
+
+
+    let lastScrollTop = 0;
 
     useEffect(() => {
-        let lastScrollTop = 0;
         const handleScroll = () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                setIsHidden(true);
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 100) {
+                if (!hideTimeout) {
+                    const timeout = setTimeout(() => {
+                        setIsHidden(true);
+                    }, 1500);
+                    setHideTimeout(timeout);
+                }
+                if (scrollTop < lastScrollTop) {
+                    clearTimeout(hideTimeout);
+                    setHideTimeout(null);
+                    setIsHidden(false);
+                }
             } else {
+                if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                    setHideTimeout(null);
+                }
                 setIsHidden(false);
             }
-            lastScrollTop = scrollTop;
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+            }
         };
-    }, []);
+    }, [hideTimeout]);
 
     const links = [
         { href: "/", icon: <HomeIcon className={styles.icon} />, label: "Home" },

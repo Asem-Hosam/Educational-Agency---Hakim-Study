@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 
 
-export default async function middleware(request) {
+export default function middleware(request) {
 
     const handleI18nRouting = createMiddleware({
         locales: ['en', 'ar'],

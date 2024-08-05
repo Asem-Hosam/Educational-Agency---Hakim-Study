@@ -20,7 +20,7 @@ async function Section() {
                         <p>{t("desc")}</p>
                     </div>
                     <div className={styles.btn}>
-                        <CustomLink href="/explore">{t("Btn")}</CustomLink>
+                        <CustomLink href="/explore/">{t("Btn")}</CustomLink>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,16 @@
 'use client';
 import { useRouter, usePathname } from 'next/navigation';
 import styles from "./localSwitcher.module.css"
-
-function LocaleSwitcher() {
+import { GlobeAltIcon } from '@heroicons/react/24/outline'
+import DialogSheet from './../dialog/dialog';
+import CustomButton from '../button/button';
+import { useTranslations } from 'next-intl';
+function LocaleSwitcher({ className }) {
     const router = useRouter();
     const pathname = usePathname();
+
+
+    const t = useTranslations("changeLang");
 
     const changeHandler = (locale) => {
         const nextLocale = locale;
@@ -17,10 +23,12 @@ function LocaleSwitcher() {
     };
 
     return (
-        <div className={styles.btnCon} >
-            <button value="en" onClick={() => { changeHandler("en") }} >en</button>
-            <button value="ar" onClick={() => { changeHandler("ar") }}>ar</button>
-        </div>
+        < DialogSheet dialogTrigger={<GlobeAltIcon className={` ${styles.icon} ${className}`} />}>
+            <h2 className={styles.text}>{t("title")}</h2>
+            <p>{t("desc")}</p>
+            <CustomButton onClick={() => { changeHandler("en") }} >{t("Btnen")}</CustomButton>
+            <CustomButton onClick={() => { changeHandler("ar") }} >{t("Btnar")}</CustomButton>
+        </DialogSheet>
     );
 };
 

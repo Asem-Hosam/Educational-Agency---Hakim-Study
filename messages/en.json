@@ -2,7 +2,7 @@
     "Header": {
         "Home": "Home",
         "Universities": "Universities",
-        "AboutUs": "AboutUs",
+        "AboutUs": "About",
         "Services": "Services"
     },
     "ProfilePage": {
@@ -14,5 +14,11 @@
         "title": "Educational Consultant",
         "desc": "Your educational advisor in Türkiye and your companion.",
         "Btn": "Explore"
+    },
+    "changeLang": {
+        "title": "Language and region",
+        "desc": "Choose Language and region",
+        "Btnen": "English",
+        "Btnar": "Arabic"
     }
 }

@@ -1,75 +1,54 @@
-'use client'
+"use client"
+import Explorewrapper from "./explorewrapper";
+import { BellAlertIcon, BookOpenIcon, BuildingLibraryIcon, ChevronLeftIcon, DocumentCheckIcon, DocumentMagnifyingGlassIcon, FireIcon, MegaphoneIcon, UsersIcon, } from '@heroicons/react/24/outline';
 import Excard from "./excard";
-import "./explorebar.css"
-import { useState, useRef, useEffect } from "react";
-import { BuildingLibraryIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { usePathname } from 'next/navigation';
+import "./explorebar.css";
+import { useEffect, useState } from "react";
 
 export default function Explorebar() {
-    const [isOverflowing, setIsOverflowing] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(0);
-    const scrollContainerRef = useRef(null);
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const pathname = usePathname();
+    const items = [
+        { href: "offers", icon: <FireIcon />, title: "Offers" },
+        { href: "announcements", icon: <MegaphoneIcon />, title: "Announcements" },
+        { href: "universities", icon: <BuildingLibraryIcon />, title: "Universities" },
+        { href: "specializations", icon: <BookOpenIcon />, title: "Specializations" },
+        { href: "scholarships", icon: <DocumentMagnifyingGlassIcon />, title: "Scholarships" },
+    ];
+
+    // { href: "fellows", icon: <UsersIcon />, title: "Fellows" },
 
 
     useEffect(() => {
-        const handleResize = () => {
-            const container = scrollContainerRef.current;
-            if (container) {
-                const containerWidth = container.clientWidth;
-                const contentWidth = container.scrollWidth;
-                setIsOverflowing(contentWidth > containerWidth);
-            }
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
         };
 
-        handleResize();
-        window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-
-    const scrollHandler = (event) => {
-        const scrollLeft = event.target.scrollLeft;
-        setIsScrolled(scrollLeft > 0);
+    const containerStyle = {
+        top: scrollPosition > 50 ? '10px' : '50px',
     };
 
-    function scrollLeft() {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({
-                left: -100,
-                behavior: 'smooth',
-            });
-        }
-    };
-
-    function scrollRight() {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({
-                left: 100,
-                behavior: 'smooth',
-            });
-        }
-    };
 
     return (
-        <div className={"container"}>
-            <div className={`btn1 ${isScrolled ? 'scrolled' : ''} ${!isOverflowing ? 'disable' : ''}`}>
-                <button onClick={scrollLeft} ><ChevronLeftIcon /></button>
-            </div>
-            <div className={`overlay ${isScrolled ? 'scrolled' : ''}  ${!isOverflowing ? "disable" : ""} `}>
-                <div
-                    className={`hodlder  ${!isOverflowing ? "disable" : ""} `} onScroll={scrollHandler} ref={scrollContainerRef}>
-                    <Excard href={"/"} title={"Universities"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                    <Excard href={"/"} title={"University"} icon={<BuildingLibraryIcon />} />
-                </div>
-            </div>
-            <div className={`btn2 ${!isOverflowing ? 'disable' : ''}`}>
-                <button onClick={scrollRight}><ChevronRightIcon /></button>
-            </div>
-        </div>
+        <Explorewrapper>
+            {items.map((item, index) => (
+                <Excard
+                    key={index}
+                    href={item.href}
+                    icon={item.icon}
+                    title={item.title}
+                    className={pathname.includes(item.href) ? "active" : ''} />
+            ))}
+        </Explorewrapper>
     );
 }
 

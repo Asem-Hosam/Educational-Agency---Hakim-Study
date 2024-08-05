@@ -14,7 +14,7 @@ export default async function HomePage() {
 
 
   return <>
-    <div className={`${styles.appContianer}  ${styles.absolute}`}>
+    <div className={`${styles.appContianer}  ${styles.absolute}`} >
       <Header params={locale} />
       <Section />
       <div className={styles.shapes}>

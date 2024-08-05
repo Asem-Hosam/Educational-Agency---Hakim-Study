@@ -37,7 +37,6 @@ function BottomNavbar() {
     const isActive = (linkHref) => {
         const pathWithoutLocale = path.replace(/^\/(en|ar)/, '');
 
-        console.log(pathWithoutLocale);
         if (linkHref === '/') {
             return pathWithoutLocale === '/' || pathWithoutLocale === '';
         } else if (linkHref.startsWith('/explore')) {

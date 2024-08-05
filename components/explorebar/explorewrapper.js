@@ -14,7 +14,6 @@ export default function Explorewrapper({ children }) {
 
     useEffect(() => {
         const dir = document.documentElement.getAttribute('dir') || 'ltr';
-        console.log(dir);
         setDirection(dir);
     }, []);
 
@@ -43,8 +42,6 @@ export default function Explorewrapper({ children }) {
         setIsScrolled(scrollLeft > 0);
         setIsAtStart(scrollLeft == 0);
         setIsAtEnd(event.target.scrollWidth - event.target.clientWidth === scrollLeft);
-        console.log("at the end ?", isAtStart);
-        console.log("at the start ?", isAtEnd);
     };
 
     function scrollLeft() {

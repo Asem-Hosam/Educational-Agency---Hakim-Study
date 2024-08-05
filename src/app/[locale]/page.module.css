@@ -4,6 +4,7 @@
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    background-color: var(--bg);
 }
 
 .shape1,

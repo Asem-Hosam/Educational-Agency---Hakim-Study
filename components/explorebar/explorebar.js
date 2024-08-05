@@ -1,6 +1,6 @@
 "use client"
 import Explorewrapper from "./explorewrapper";
-import { BellAlertIcon, BookOpenIcon, BuildingLibraryIcon, ChevronLeftIcon, DocumentCheckIcon, DocumentMagnifyingGlassIcon, FireIcon, MegaphoneIcon, UsersIcon, } from '@heroicons/react/24/outline';
+import { BookOpenIcon, BuildingLibraryIcon, ChevronLeftIcon, DocumentCheckIcon, DocumentMagnifyingGlassIcon, FireIcon, MegaphoneIcon, UsersIcon, } from '@heroicons/react/24/outline';
 import Excard from "./excard";
 import { usePathname } from 'next/navigation';
 import "./explorebar.css";

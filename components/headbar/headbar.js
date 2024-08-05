@@ -46,7 +46,7 @@ function Headbar() {
 
     return (
         <div className={styles.container}>
-            <div class={styles.timer}>
+            <div className={styles.timer}>
                 <Clock className={styles.icon} />
                 <h6>
                     Istanbul -

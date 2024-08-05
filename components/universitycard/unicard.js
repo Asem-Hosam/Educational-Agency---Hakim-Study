@@ -1,8 +1,7 @@
-import styles from "./unicard.module.css";
 import CustomImage from "../customImage";
 import { ArrowLongRightIcon, ArrowTopRightOnSquareIcon, EyeIcon, MapPinIcon, StarIcon } from '@heroicons/react/24/outline';
 import imageLogo from "../../assets/isLogo.webp"
-
+import styles from "./unicard.module.css"
 
 
 

@@ -26,12 +26,10 @@ export default async function middleware(request) {
         return NextResponse.redirect(new URL('/explore/universities', request.url))
     }
 
-    // Apply the base locale middleware
     return response;
 }
 
 export const config = {
-    // Match all internationalized paths
     matcher: [
         '/((?!api|_next/static|_next/image|favicon.ico|apple-touch-icon.png|favicon.svg|images/books|icons|manifest).*)'
     ]

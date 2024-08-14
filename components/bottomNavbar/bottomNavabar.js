@@ -15,7 +15,7 @@ function BottomNavbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
             if (scrollTop > 100) {
                 if (!hideTimeout) {
@@ -36,7 +36,7 @@ function BottomNavbar() {
                 }
                 setIsHidden(false);
             }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         };
 
         window.addEventListener('scroll', handleScroll);

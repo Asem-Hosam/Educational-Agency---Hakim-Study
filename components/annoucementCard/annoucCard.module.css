@@ -1,6 +1,7 @@
 .cardContainer {
     border-radius: 4px;
     max-width: 350px;
+    scroll-behavior: smooth;
 }
 
 
@@ -83,7 +84,24 @@
     height: 18px;
 }
 
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.8em;
+    background-color: var(--bg);
+}
+
+
+
 @media (max-width: 650px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        gap: 1.8em;
+    }
+
     .cardContainer {
         width: 100%;
         border-radius: 4px;

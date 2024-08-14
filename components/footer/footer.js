@@ -1,7 +1,6 @@
 import styles from "./footer.module.css";
-import { Link } from "@/navigation";
 import { MapIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
-import logo from "../../assets/logo-black.png"
+import logo from "@assets/hakimLOGO.png"
 import CustomImage from './../customImage';
 import CustomLink from './../customLink';
 

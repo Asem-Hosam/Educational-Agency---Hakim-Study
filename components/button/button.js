@@ -1,6 +1,8 @@
+"use client"
 import styles from "./button.module.css"
 import { Poppins, Cairo } from 'next/font/google'
 import { useLocale } from "next-intl"
+import { useFormStatus } from "react-dom";
 
 
 const poppins = Poppins({
@@ -15,11 +17,14 @@ const cairo = Cairo({
 
 
 
-export default function CustomButton({ children, className, onClick }) {
+export default function CustomButton({ children, className, onClick, type }) {
+    const { pending, action } = useFormStatus();
+
+
     const locale = useLocale()
     return (
-        <button className={` ${styles.btnCon} ${className} ${locale === "ar" ? cairo.className : poppins.className} `} onClick={onClick} >
-            {children}
+        <button disabled={pending} type={type} className={` ${styles.btnCon} ${className} ${locale === "ar" ? cairo.className : poppins.className} `} onClick={onClick} >
+            {pending ? "Loading..." : children}
         </button >
     );
 }

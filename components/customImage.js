@@ -1,10 +1,48 @@
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
-export default function CustomImage({ src, width = 500, height = 500, alt = "image", className, sizes, blurDataURL, placeholder, srcset }) {
-    return (
-        <Image src={src} alt={alt} width={width} height={height} className={className} srcSet={srcset}
-            sizes={sizes} priority placeholder={placeholder} blurDataURL={blurDataURL} />
-    );
+export default function CustomImage({
+  src,
+  width = 600,
+  height = 600,
+  alt = 'image',
+  className,
+  sizes,
+  blurDataURL,
+  placeholder,
+  srcset,
+  onClick,
+  link,
+  priority,
+  loading = 'lazy',
+}) {
+  const router = useRouter();
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+
+    if (link) {
+      router.push(link);
+    }
+  };
+  return (
+    <Image
+      onClick={handleClick}
+      src={src}
+      alt={alt}
+      style={onClick || link ? { cursor: 'pointer' } : null}
+      width={width}
+      height={height}
+      className={className}
+      srcSet={srcset}
+      sizes={sizes}
+      priority={priority}
+      loading={loading}
+      placeholder={placeholder}
+      blurDataURL={blurDataURL}
+      quality={100}
+    />
+  );
 }
-
-
